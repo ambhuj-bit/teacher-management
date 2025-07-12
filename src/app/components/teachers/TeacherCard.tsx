@@ -56,7 +56,7 @@ export default function TeacherCard({ teacher }: TeacherCardProps) {
             </div>
             <div>
               <p className="text-xs text-gray-500">Salary</p>
-              <p className="text-sm font-medium">&#8377;{teacher.salary.toLocaleString()}</p>
+              <p className="text-sm font-medium">₹{teacher.salary.toLocaleString()}</p>
             </div>
             <div>
               <p className="text-xs text-gray-500">Email</p>
@@ -101,7 +101,7 @@ export default function TeacherCard({ teacher }: TeacherCardProps) {
           teacher={teacher}
           onClose={() => setShowDetailsModal(false)}
           onEdit={handleEdit}
-  onDelete={handleDelete}
+          onDelete={handleDelete}
         />
       )}
     </>
