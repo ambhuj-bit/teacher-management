@@ -43,6 +43,8 @@ npm install
 ```bash
 npm run dev
 ```
+## Live Demo
+[View deployed site](https://teaacher-manager.netlify.app/)
 
 ## Scripts
 
