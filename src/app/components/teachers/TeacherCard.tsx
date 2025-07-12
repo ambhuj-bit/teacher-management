@@ -5,7 +5,7 @@ import { Teacher } from '@/app/utils/types/teachers';
 import TeacherDetailsModal from '../ui/TeacherDetailsModal';
 
 interface TeacherCardProps {
-  teacher?: Teacher;
+  teacher: Teacher;
 }
 
 export default function TeacherCard({ teacher }: TeacherCardProps) {
@@ -21,13 +21,6 @@ export default function TeacherCard({ teacher }: TeacherCardProps) {
     // Delete teacher from your state/API
     console.log('Delete teacher with ID:', teacherId);
   };
-
-  if (!teacher) {
-    return <div className="p-4 text-red-500">Teacher data missing</div>;
-  }
-
-  // Safely access properties
-  const initials = `${teacher.firstName?.charAt(0) || ''}${teacher.lastName?.charAt(0) || ''}`;
   
   return (
     <>
