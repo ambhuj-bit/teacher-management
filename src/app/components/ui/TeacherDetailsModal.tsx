@@ -1,5 +1,5 @@
 import { Teacher } from "@/app/utils/types/teachers";
-import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { PencilIcon, TrashIcon,XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import TeacherForm from "./TeacherForm";
 
@@ -28,6 +28,7 @@ export default function TeacherDetailsModal({
     if (window.confirm(`Are you sure you want to delete ${teacher.firstName} ${teacher.lastName}?`)) {
       onDelete(teacher.id);
       onClose();
+      setIsDeleting(true);
     }
   };
 
@@ -44,7 +45,7 @@ export default function TeacherDetailsModal({
                 onClick={() => setIsEditing(false)}
                 className="text-gray-500 hover:text-gray-700 text-2xl"
               >
-                &times;
+                < XMarkIcon className="h-6 w-6"/>
               </button>
             </div>
             <TeacherForm
@@ -70,7 +71,7 @@ export default function TeacherDetailsModal({
               onClick={onClose}
               className="text-gray-500 hover:text-gray-700 text-2xl"
             >
-              &times;
+             < XMarkIcon className="h-6 w-6"/>
             </button>
           </div>
           
