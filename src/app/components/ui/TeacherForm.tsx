@@ -49,16 +49,20 @@ export default function TeacherForm({ initialData, onSave, onCancel }: TeacherFo
 
         {/* Last Name */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Last Name
-          </label>
-          <input
-            className={`w-full rounded-lg border  py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500`} placeholder='last Name'
-          />
-          {errors.lastName && (
-            <p className="mt-1 text-sm text-red-600">{errors.lastName.message}</p>
-          )}
-        </div>
+  <label className="block text-sm font-medium text-gray-700 mb-1">
+    Last Name *
+  </label>
+  <input
+    {...register('lastName', { required: 'Last name is required' })}
+    className={`w-full rounded-lg border ${
+      errors.lastName ? 'border-red-500' : 'border-gray-300'
+    } py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+    placeholder='Last Name'
+  />
+  {errors.lastName && (
+    <p className="mt-1 text-sm text-red-600">{errors.lastName.message}</p>
+  )}
+</div>
 
         {/* Email */}
         <div>
@@ -161,9 +165,6 @@ export default function TeacherForm({ initialData, onSave, onCancel }: TeacherFo
             <option value="inactive">Inactive</option>
           </select>
         </div>
-
-        {/* Hire Date (hidden but included in form) */}
-        <input type="hidden" {...register('hireDate')} />
       </div>
 
       <div className="flex justify-end space-x-3 pt-4">
